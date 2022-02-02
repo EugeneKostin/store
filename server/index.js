@@ -18,6 +18,8 @@ const PORT = process.env.PORT || 3000
 app.use(cors())
 app.use(express.json())
 
+app.use('/static', express.static(__dirname + '/public'));
+
 app.use('/api', router)
 
 app.listen(PORT, (err) => {

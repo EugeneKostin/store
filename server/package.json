@@ -4,7 +4,7 @@
   "description": "node js express server ",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon -L index.js"
   },
   "author": "eugene",
   "license": "ISC",

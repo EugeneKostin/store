@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    image: express
+    container_name: server
+    volumes:
+      - ./server:/server
+    ports:
+      - '3000:3000'
+    links:
+      - db
+    depends_on:
+      - db
+    restart: unless-stopped
+  db:
+    image: mongo
+    container_name: db
+    volumes:
+      - ./data:/data/db
+    ports:
+      - 27017:27017
+    restart: unless-stopped

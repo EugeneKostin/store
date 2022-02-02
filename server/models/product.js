@@ -7,11 +7,10 @@ const productSchema = new Schema({
     required: true
   },
   description: String,
-  info: {
-    color: String,
-    size: String,
-    inStock: Boolean
-  },
+  info: [{
+    label: String,
+    value: String,
+  }],
 })
 
 module.exports = mongoose.model('product', productSchema);
