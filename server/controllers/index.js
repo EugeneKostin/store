@@ -19,11 +19,8 @@ class ProductController {
     console.log(req);
     productModel.find({}, (err, products) => {
       err && res.status(500).send(err);
-      const info = products.map((product) => {
-        product.info.map((info) => {
-          return info;
-        })
-      });
+      // Что-то можно здесб придумать
+      const info = products.reduce((acc, cur) => { return acc + cur.info }, [])
       res.send(info);
     });
   }
