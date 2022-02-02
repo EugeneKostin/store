@@ -19,8 +19,8 @@ class ProductController {
     console.log(req);
     productModel.find({}, (err, products) => {
       err && res.status(500).send(err);
-      var info = products.map((product) => {
-        product.map((info) => {
+      const info = products.map((product) => {
+        product.info.map((info) => {
           return info;
         })
       });
