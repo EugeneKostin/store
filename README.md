@@ -10,21 +10,37 @@ DB: MongoDB Docker [Image](https://hub.docker.com/_/mongo)
 This project is currently in development.
 
 ## Installation and Setup Instructions
-You will need `node` installed globally on your machine:
+
+### You will need `node` installed globally on your machine:
 
 [Node.js](https://nodejs.org/)
 
-Clone down this repository:
+### Clone down this repository:
 
-`git clone git@github.com:EugeneKostin/store.git`
+`git clone https://github.com/eugenekostin/store.git`
 
-Installation (`cd` into the new folder and type):
+### Installation (`cd` into the new folder and type):
 
-`npm install`
+Downloading and installing Server packages: `npm install`
 
-To start Server in Production mode:
+Downloading and installing Client packages: `npm run client:install`
 
-`npm start`
+Build Client: `npm run client:build`
+
+Start Server in Production mode: `npm start`
+
+### MongoDB Docker-compose file config:
+
+```
+db:
+  image: mongo
+  container_name: db
+  volumes:
+    - ./data:/data/db
+  ports:
+    - 27017:27017
+  restart: unless-stopped
+```
 
 To Visit App in your browser:
 
