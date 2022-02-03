@@ -11,9 +11,7 @@ This project is currently in development.
 
 ## Installation and Setup Instructions
 
-### You will need `node` installed globally on your machine:
-
-[Node.js](https://nodejs.org/)
+### You will need [Node.js](https://nodejs.org/) installed globally on your machine:
 
 ### Clone down this repository:
 
