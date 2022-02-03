@@ -42,6 +42,10 @@ db:
   restart: unless-stopped
 ```
 
+### MongoDB Shell comand:
+
+`docker run --name db-test -d  -p 27017:27017 -v /data:/data/db --restart unless-stopped mongo`
+
 To Visit App in your browser:
 
 `localhost:3000/`
