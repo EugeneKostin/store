@@ -3,17 +3,17 @@ import { Box, Collapse, IconButton, Typography } from '@mui/material'
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined'
 import { FormInfoItem } from './FormInfoItem'
 import { useState, useEffect } from 'react'
+import { filterList } from '../filterList'
 
 export const FormInfo = ({ setFormData }) => {
 
-  const [infoList, setInfoList] = useState([{ label: '', value: '' }])
+  const [infoList, setInfoList] = useState(filterList)
 
   useEffect(() => {
     setFormData((prevState) => ({ ...prevState, 'info': infoList }))
   }, [infoList])
 
   const handleChange = (e, index) => {
-    console.log(infoList);
     const { name, value } = e.target;
     const list = [...infoList];
     list[index][name] = value;
@@ -21,12 +21,10 @@ export const FormInfo = ({ setFormData }) => {
   };
 
   const handleAddField = () => {
-    console.log(infoList);
     setInfoList([...infoList, { label: '', value: '' }]);
   };
   const handleDeleteField = (index) => {
     const list = [...infoList];
-    console.log(index, list);
     list.splice(index, 1);
     setInfoList(list);
   };
@@ -42,7 +40,7 @@ export const FormInfo = ({ setFormData }) => {
       <TransitionGroup>
         {infoList.map((infoItem, index) => (
           <Collapse key={index}>
-            <FormInfoItem handleChange={(e) => handleChange(e, index)} handleDeleteField={() => handleDeleteField(index)} />
+            <FormInfoItem infoItem={infoItem} handleChange={(e) => handleChange(e, index)} handleDeleteField={() => handleDeleteField(index)} />
           </Collapse>
         ))}
       </TransitionGroup>
@@ -58,6 +56,7 @@ export const FormInfo = ({ setFormData }) => {
           onClick={handleAddField}
           color="primary"
           size="large"
+          disabled
         >
           <AddCircleOutlineOutlinedIcon fontSize="large" />
         </IconButton>

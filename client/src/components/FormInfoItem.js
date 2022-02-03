@@ -1,8 +1,8 @@
-import { Box, TextField, MenuItem, IconButton } from '@mui/material';
-import RemoveCircleOutlineOutlinedIcon from '@mui/icons-material/RemoveCircleOutlineOutlined';
-import { grey } from '@mui/material/colors';
+import { Box, TextField, IconButton } from '@mui/material'
+import RemoveCircleOutlineOutlinedIcon from '@mui/icons-material/RemoveCircleOutlineOutlined'
+import { grey } from '@mui/material/colors'
 
-export const FormInfoItem = ({ handleChange, handleDeleteField }) => {
+export const FormInfoItem = ({ handleChange, handleDeleteField, infoItem }) => {
 
   return (
     <Box sx={{
@@ -14,8 +14,10 @@ export const FormInfoItem = ({ handleChange, handleDeleteField }) => {
     }} >
       <TextField sx={{ minWidth: '160px' }}
         variant="standard"
-        label="Название"
-        name="label"
+        label='Название'
+        defaultValue={infoItem.label}
+        disabled
+        name='label'
         fullWidth
         onChange={handleChange}
       />
@@ -35,6 +37,7 @@ export const FormInfoItem = ({ handleChange, handleDeleteField }) => {
           title="Удалить"
           onClick={handleDeleteField}
           color="primary"
+          disabled
           size="large"
         >
           <RemoveCircleOutlineOutlinedIcon fontSize="large" />
@@ -42,4 +45,4 @@ export const FormInfoItem = ({ handleChange, handleDeleteField }) => {
       </Box>
     </Box>
   )
-};
+}

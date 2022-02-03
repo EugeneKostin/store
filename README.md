@@ -16,20 +16,16 @@ You will need `node` installed globally on your machine:
 
 Clone down this repository:
 
-`git clone git@github.com:EugeneKostin/poke.git`
+`git clone git@github.com:EugeneKostin/store.git`
 
 Installation (`cd` into the new folder and type):
 
 `npm install`
 
-To Start Server:
+To start Server in Production mode:
 
 `npm start`
 
 To Visit App in your browser:
 
 `localhost:3000/`
-
-The page will reload when you make changes.
-
-You may also see any list errors in the console.

@@ -1,13 +1,9 @@
 import { AppRouter } from "./components/AppRouter"
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { Layout } from './components/Layout'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 const theme = createTheme({
-  palette: {
-    // primary: deepOrange,
-    // secondary: grey,
-  },
   typography: {
     fontFamily: 'Roboto',
     fontWeightLight: 300,

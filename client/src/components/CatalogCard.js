@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useState } from "react"
 import { Card, CardHeader, CardContent, CardActions, Collapse, IconButton, Typography, List, ListItem } from '@mui/material'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { styled } from '@mui/material/styles';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import { styled } from '@mui/material/styles'
 
 export const CatalogCard = ({ product }) => {
 
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(false)
 
   return (
-    <Card sx={{ maxWidth: 345 }} elevation={3}>
+    <Card sx={{ width: 345 }} elevation={3} >
       <CardHeader sx={{ height: 64, overflow: "hidden", alignItems: 'flex-start' }}
         title={product.name}
       />

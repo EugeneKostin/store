@@ -10,7 +10,7 @@ export const BottomNav = ({ pages }) => {
       display: { xs: 'block', md: 'none' },
       width: '100%',
       position: 'fixed',
-      zIndex: 'zIndex.appBar',
+      zIndex: 'inherit',
       bottom: 0,
       left: 0,
       right: 0

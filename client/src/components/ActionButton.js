@@ -9,8 +9,6 @@ export const ActionButton = ({ label, variant, size, ...otherProps }) => {
       fontSize: { xs: '1rem', md: '1.4rem' },
       fontWeight: 'fontWeightLight',
       letterSpacing: '.1rem',
-      // px: { xs: 2, md: 4 },
-      // py: { xs: 1, md: 2 },
     }}>
       {label}
     </Button>
